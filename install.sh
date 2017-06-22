@@ -1,7 +1,7 @@
 #!/bin/bash
-# Installs Square's IntelliJ configs into your user configs.
+# Installs Voyager's IntelliJ configs into your user configs.
 
-echo "Installing Square IntelliJ configs..."
+echo "Installing Voyager IntelliJ configs..."
 
 CONFIGS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/configs"
 
@@ -16,11 +16,13 @@ do
 
     # Install codestyles
     mkdir -p $i/codestyles
-    cp -frv "$CONFIGS/codestyles"/* $i/codestyles
+    #cp -frv "$CONFIGS/codestyles"/* $i/codestyles
+    cp -frv "$CONFIGS/codestyles"/VoyagerAndroid.xml $i/codestyles
 
     # Install inspections
     mkdir -p $i/inspection
-    cp -frv "$CONFIGS/inspection"/* $i/inspection
+    #cp -frv "$CONFIGS/inspection"/* $i/inspection
+    cp -frv "$CONFIGS/inspection"/Voyager $i/inspection
 
     # Install options ("Exclude from Import and Completion")
     mkdir -p $i/options
@@ -30,4 +32,4 @@ done
 
 echo "Done."
 echo ""
-echo "Restart IntelliJ and/or AndroidStudio, go to preferences, and apply 'Square' or 'SquareAndroid'."
+echo "Restart IntelliJ and/or AndroidStudio, go to preferences, and apply 'VoyagerAndroid'."
